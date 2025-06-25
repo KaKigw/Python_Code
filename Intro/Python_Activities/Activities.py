@@ -69,6 +69,16 @@ else:
     print("Tails")
     
 
+#Activity 05: Collatz Conjecture
+""" The Collatz conjecture is a sequence defined as follows: start with any positive integer n. If n is even, divide it by 2. If n is odd, multiply it by 3 and add 1. Repeat the process indefinitely. The conjecture states that no matter what number you start with, you will always eventually reach 1."""
+n= int(input("Enter a positive integer to start: "))
+while n != 1:
+    print(n, end=' ')
+    if n % 2 == 0:
+        n = n // 2 , count=count+1# If n is even, divide it by 2
+    else:
+        n = 3 * n + 1, count=count+1 # If n is odd, multiply by 3 and add 1
+print(n)  # Print the final value, which should be 1
 
 
 
