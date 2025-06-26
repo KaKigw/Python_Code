@@ -1,1 +1,0 @@
-print(int(input(f"Welcome to the Guess the Number game!\nI'm thinking of a number between 1 and 100. Can you guess what it is?")))
