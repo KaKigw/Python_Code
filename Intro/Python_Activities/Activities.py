@@ -67,18 +67,46 @@ if toss == 0:
     print("Heads")
 else:
     print("Tails")
-    
+
+
+for i in range(10):
+    toss = random.randint(0, 1)  # Generate a random number, either 0 or 1
+    if toss == 0:
+        print("Heads")
+    else:
+        print("Tails")
+
+import random
+
+max_throws = 100
+for throw in range(1, max_throws + 1):
+    result = random.randint(0, 1)  # 0 for Tails, 1 for Heads
+    side = "Heads" if result == 1 else "Tails"
+    print(f"Throw {throw}: {side}")
+    if result == 1:
+        print(f"Heads appeared on throw number {throw}")
+        break
+else:
+    print("Heads never appeared in 100 throws.")
+
 
 #Activity 05: Collatz Conjecture
 """ The Collatz conjecture is a sequence defined as follows: start with any positive integer n. If n is even, divide it by 2. If n is odd, multiply it by 3 and add 1. Repeat the process indefinitely. The conjecture states that no matter what number you start with, you will always eventually reach 1."""
 n= int(input("Enter a positive integer to start: "))
+count = 0  # Initialize a counter to keep track of the number of steps
+print("Collatz sequence:")
 while n != 1:
     print(n, end=' ')
     if n % 2 == 0:
-        n = n // 2 , count=count+1# If n is even, divide it by 2
+        n = n // 2  # If n is even, divide it by 2
     else:
-        n = 3 * n + 1, count=count+1 # If n is odd, multiply by 3 and add 1
+        n = 3 * n + 1  # If n is odd, multiply by 3 and add 1
+    count += 1  # Increment the step counter
 print(n)  # Print the final value, which should be 1
+print(f"Total steps taken to reach 1: {count}")
+
+
+
 
 
 
