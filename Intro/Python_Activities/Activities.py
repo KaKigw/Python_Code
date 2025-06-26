@@ -105,16 +105,112 @@ while n != 1:
 print(n)  # Print the final value, which should be 1
 print(f"Total steps taken to reach 1: {count}")
 
+# Activity 06: List Operations
+""" Define the list: list = [17, 38, 10, 25, 72], then perform the following actions:
+
+Sort and display the list
+Add the element 12 to the list and display the list
+Reverse and display the list
+Display the index of the element 17
+Remove the element 38 and display the list
+Display the sublist from the 2nd to the 3rd element
+Display the sublist from the beginning to the 2nd element
+Display the sublist from the 3rd element to the end of the list
+Display the complete sublist of the list
+Display the last element using negative indexing. """
+
+my_list = [17, 38, 10, 25, 72]
+my_list = sorted(my_list)  # Sort the list
+print(f"Sorted list: {my_list}")
+
+my_list.append(12)  # Add the element 12 to the list
+print(f"List after adding 12: {my_list}")
+
+my_list.reverse()  # Reverse the list
+print(f"Reversed list: {my_list}")
+
+my_list.sort(reverse=True)  # Sort the list again to maintain order
+print(f"List after sorting in descending order: {my_list}")
+
+index_of_17 = my_list.index(17)  # Display the index of the element 17
+print(f"Index of 17: {index_of_17}")
+
+index_of_38 = my_list.pop(my_list.index(38))  # Remove the element 38 and display the list
+print(f"List after removing 38: {my_list}")
+
+my_list.remove(38)  # Remove the element 38
+print(f"List after removing 38: {my_list}")
+
+print(f"Sublist from 2nd to 3rd element: {my_list[1:3]}")
+print(f"Sublist from beginning to 2nd element: {my_list[:2]}")
+print(f"Sublist from 3rd element to end: {my_list[2:]}")
+print(f"Complete sublist: {my_list[:]}")
+print(f"Last element using negative indexing: {my_list[-1]}")
+
+# Activity 07: Dice Throwing
+""" Throw 2 dices sum the results and display the result and the number of times the result was obtained in 100 throws and display it in a dictionary """
+import random
+dice_results = {}
+for _ in range(100):
+    die1 = random.randint(1, 6)  # Simulate the first die
+    die2 = random.randint(1, 6)  # Simulate the second die
+    result = die1 + die2  # Calculate the sum of the two dice
+    if result in dice_results:
+        dice_results[result] += 1  # Increment the count for this result
+    else:
+        dice_results[result] = 1  # Initialize the count for this result
+print("Dice results after 100 throws:")
+for result, count in dice_results.items():
+    print(f"Result {result}: {count} times")
 
 
+#activity 08: Student Dictionary
+""" Create a dictionary named student with the following keys and values:
 
+  name: "Alice"
+  age: 21
+  major: "Data Science"
+Access and print the value associated with the key name.
+Print all the keys in the dictionary.
+Print all the values in the dictionary.
+Update the age to 22.
+Add a new key-value pair: graduation_year: 2025.
+Print the updated dictionary. """
+student = {
+    "name": "Alice",
+    "age": 21,
+    "major": "Data Science"
+}
+print("Name:", student["name"])  # Access and print the value associated with the key name
+print(f"Keys in the dictionary: {student.keys()}")  # Print all the keys in the dictionary
+print(f"Values in the dictionary: {student.values()}")  # Print all the values in the dictionary
+student["age"] = 22  # Update the age
+student["graduation_year"] = 2025  # Add a new key-value pair
+print(f"Updated dictionary: {student}")  # Print the updated dictionary
 
+# Activity 09: Set Operations
+""" Create two sets: set1 = {1, 2, 3, 4, 5} and set2 = {4, 5, 6, 7, 8}.
+Compute and print the union of set1 and set2.
+Compute and print the intersection of set1 and set2.
+Compute and print the difference between set1 and set2.
+Compute and print the symmetric difference between set1 and set2. """
+set1 = {1, 2, 3, 4, 5}
+set2 = {4, 5, 6, 7, 8}
+print(f"Union of set1 and set2: {set1 | set2}")
+print(f"Intersection of set1 and set2: {set1 & set2}")
+print(f"Difference between set1 and set2: {set1 - set2}")
+print(f"Symmetric difference between set1 and set2: {set1 ^ set2}")
 
+# Activity 10: Modify Tuple
+""" Write a Python script to modify a tuple by adding an element at the end of it.
 
-
-
-
-
-
-
+For inputs with tuple (1, 2, 3) and element 4, the return value should be (1, 2, 3, 4).
+Hint: You need to first convert the tuple to another data type, such as a list. """
+my_tuple = (1, 2, 3)
+element_to_add = 4
+# Convert the tuple to a list, add the element, and convert it back to a tuple  
+my_list = list(my_tuple)  # Convert tuple to list
+my_list.append(element_to_add)  # Add the element to the list
+my_tuple = tuple(my_list)  # Convert the list back to a tuple
+print(f"Modified tuple: {my_tuple}")  # Print the modified tuple
 
