@@ -78,13 +78,6 @@ def Get_last(t):
 print(sorted(List, key=Get_last))  
 
 #Question 03
-# Hint: Start with two dictionaries.
-# Loop through the keys in both dictionaries.
-# If a key is in both, add their values together.
-# If a key is only in one, keep its value.
-# You can use a for loop and the dict get() method to help.
-# Try to write the code yourself! If you get stuck, ask for another hint.
-
 
 # Sample dictionaries
 d1 = {'a': 100, 'b': 200, 'c': 300}
@@ -108,13 +101,7 @@ for key in d2:
 print(result)
 
 #Question 04
-# Hint: Ask the user for a number n using input().
-# Create an empty dictionary.
-# Use a for loop from 1 to n (inclusive).
-# For each number i, set the key to i and the value to i*i.
-# Print the dictionary at the end.
 
-# Try to write the code yourself! If you get stuck, ask for another hint.
 input_number = int(input("Enter an integral number n: "))
 result_dict = {}
 for i in range(input_number + 1):
@@ -123,10 +110,7 @@ print(result_dict)
 
 
 #Question 05
-# Hint: Start with a list of tuples, where the second element is a string representing a float.
-# To sort by the float value, use the sort() method or sorted() function with a key function that converts the second element to float.
-# You can define a function like def get_float(t): return float(t[1])
-# Print the sorted list at the end.
+
 
 list_ = [('item1', '12.20'), ('item2', '15.10'), ('item3', '24.5')]
 
