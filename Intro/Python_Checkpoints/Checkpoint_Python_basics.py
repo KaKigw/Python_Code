@@ -58,3 +58,5 @@ while Guessed_Num != Random_Num:
     if Num_Guesses >= Max_Guesses:
         print(f"Sorry, you've used all {Max_Guesses} guesses. The number was {Random_Num}.")
         break
+
+
