@@ -75,7 +75,7 @@ List = [(2, 5), (1, 2), (4, 4), (2, 3), (2, 1)]
 def Get_last(t):
     return t[-1]
 
-print(sorted(List, key=Get_last))  
+print(sorted(List, key=Get_last)) #print(sorted(List, key=lambda x : x[-1]))   
 
 #Question 03
 
@@ -99,6 +99,17 @@ for key in d2:
         result[key] = d2[key]
 
 print(result)
+
+d1 = {'a': 100, 'b': 200, 'c': 300}
+d2 = {'a': 300, 'b': 200, 'd': 400}
+# Combine two dictionaries by adding values for common keys
+keys = set(list(d1.keys()) + list(d2.keys()))
+
+d3 = {}
+for key in keys:
+    d3[key] = d1.get(key, 0) + d2.get(key, 0)
+print(d3)
+
 
 #Question 04
 
