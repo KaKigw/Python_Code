@@ -214,4 +214,121 @@ my_list.append(element_to_add)  # Add the element to the list
 my_tuple = tuple(my_list)  # Convert the list back to a tuple
 print(f"Modified tuple: {my_tuple}")  # Print the modified tuple
 
+#Mini Puzzle: Player Class
+class Player:
+    MAX_HP = 100  # Constant-like class attribute
 
+    def __init__(self, name):
+        self.name = name
+        self.hp = Player.MAX_HP
+
+    def take_damage(self, amount):
+        self.hp -= amount
+        if self.hp < 0:
+            self.hp = 0
+        print(f"{self.name} took {amount} damage. HP is now {self.hp}")
+
+    def heal(self, amount):
+        self.hp += amount
+        if self.hp > Player.MAX_HP:
+            self.hp = Player.MAX_HP
+        print(f"{self.name} healed {amount} HP. HP is now {self.hp}")
+
+    def is_alive(self):
+        return self.hp > 0
+
+    def __str__(self):
+        status = "alive" if self.is_alive() else "knocked out"
+        return f"{self.name}: {self.hp}/{Player.MAX_HP} HP — {status}"
+
+
+kaki = Player("Kaki")
+print(kaki)                   
+
+kaki.take_damage(70)
+print(kaki)                   
+
+kaki.heal(50)
+print(kaki)                   
+
+kaki.take_damage(100)
+print(kaki)                  
+print(kaki.is_alive())      
+
+#Write a Python function that takes two lists as parameters and returns `True` if they have **at least one common element**, otherwise returns `False`.
+def common_element(x,y):
+    for index in x:
+        if index in y:
+            return True
+    return False
+
+#other way to do it
+def common_element_2(x, y):
+    return any(item in y for item in x)
+
+list_1 = ['q',2,2,'sun']
+list_2 = [3,7,'sun']
+print(common_element_2(list_1,list_2))
+
+
+""" ## Challenge: Student Result Calculator
+
+🎯 **Objective**: Create a Python program that allows a student to input their marks and calculates their final result.
+
+### 🎓 Instructions:
+
+1. Define the coefficients of the three main courses:
+   - `maths`: 5
+   - `computer science`: 3
+   - `sports`: 1
+
+2. Prompt the student to enter their **marks** for each course (on /20). Make sure to convert the input to `float`.
+
+3. Define a **function** that takes the marks and calculates the **overall mark** using the formula:
+
+$$
+\text{overall mark} = \frac{(\text{maths} \times 5 + \text{computer science} \times 3 + \text{sports} \times 1)}{5 + 3 + 1}
+$$
+
+
+
+4. Use an **if condition** to determine if the student **succeeded** (overall mark ≥ 10) or **failed** (mark < 10).
+
+5. Create a `Student` **class** with the following:
+   - Attributes: `name`, `overall_mark`, `status`
+   - Method `__str__()` to return:  
+     `"StudentName has Succeeded/Failed with an overall mark of X"`
+
+6. At the end, **print** the result using the class and method.
+ """
+
+class Student:
+    def __init__(self,name,Overall_mark):
+        self.name = name
+        self.Overall_mark = Overall_mark
+        
+    def __str__(self):
+        status = "Succeeded" if self.Overall_mark >= 10 else "Failed"
+        return f"{self.name} has {status} with an overall mark of {self.Overall_mark:.2f}"
+
+def calculate_overall(x,y,z):
+    return (x*5+y*3+z)/Qof_Sum    
+
+Qof_math, Qof_computer_science, Qof_sports = 5, 3, 1
+Qof_Sum = sum([Qof_math, Qof_computer_science, Qof_sports])
+
+Dic = {}
+student_num = 0
+while student_num < 2:
+    name = input("Enter your name: ")
+    marks = input("Enter your marks for math, CS, and sports (separated by spaces): ")
+    math, CS, sports = map(float, marks.split())
+    Overall_mark = calculate_overall(math, CS, sports)
+    student = Student(name, Overall_mark)
+    Dic[name] = str(student)
+    student_num += 1
+
+for i, j in Dic.items():
+     print(f"{i}: {j}")
+
+        
