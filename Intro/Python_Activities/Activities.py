@@ -331,4 +331,36 @@ while student_num < 2:
 for i, j in Dic.items():
      print(f"{i}: {j}")
 
-        
+"""Create a text file and write your name and age into it.
+Read the file and print its contents.
+Append a new line to the file with your favorite hobby.
+Create a CSV file with the following data:
+
+Name,Age,City
+Alice,30,New York
+Bob,25,Los Angeles
+Charlie,35,Chicago
+Use numpy.genfromtxt() to read the CSV file and print the data. """
+
+with open("info.txt","w") as file:
+    file.write("Kaki\n25")
+
+with open("info.txt","r") as file:
+    contents = file.read()
+    print(f"Content of info.txt:{contents}")
+with open("info.txt","a") as file:
+    file.write("\nLoves sleeping")
+
+import numpy as np
+csv_content =  """Name,Age,City
+Alice,30,New York
+Bob,25,Los Angeles
+Charlie,35,Chicago
+"""
+with open("data.csv", "w") as file:
+    file.write(csv_content)
+
+data = np.genfromtxt("data.csv", delimiter=",", skip_header=1, dtype=str)
+print("📊 CSV Data Loaded with NumPy:")
+print(data)
+
