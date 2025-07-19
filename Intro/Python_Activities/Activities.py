@@ -364,3 +364,7 @@ data = np.genfromtxt("data.csv", delimiter=",", skip_header=1, dtype=str)
 print("📊 CSV Data Loaded with NumPy:")
 print(data)
 
+
+import requests
+print(requests.__version__)
+
