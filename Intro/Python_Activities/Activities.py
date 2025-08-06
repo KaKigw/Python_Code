@@ -368,3 +368,22 @@ print(data)
 import requests
 print(requests.__version__)
 
+#Pandas
+
+""" 
+Instructions :
+
+Create a list of products, 'Apple', 'Banana', 'Carrot', 'Daikon'.
+Convert the list into a pandas Series using the pd.Series() function.
+Print out the new Series to see the values.
+Create a Series with prices of the products, [2, 1, 3, 4]
+Print out the new Series to see the values.
+Add the two Series together and print out the result.
+Create a DataFrame using a dictionary of lists, where the keys are 'Product' and 'Price' and the values are the two Series you created.
+Print out the DataFrame to see the values.
+Create a DataFrame using a list of dictionaries, where each dictionary represents a row in the DataFrame with keys 'Product' and 'Price' and values from the two Series you created.
+Print out the DataFrame to see the values. Make sure to import pandas library before doing the exercises. 
+"""
+import pandas as pd
+list_3 = ["apple","banana","carrot","daikon"]
+list_3_series = pd.Series(list_3)
